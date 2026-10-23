@@ -297,7 +297,7 @@ test('serve --wait stops once every card is answered, and prints the answers', a
   child.stdout.on('data', (d) => (out += d))
   const exited = new Promise((resolve) => child.on('exit', resolve))
   t.after(() => child.kill())
-  const url = `http://localhost:${port}`
+  const url = `http://127.0.0.1:${port}`
   let deck = null
   for (let i = 0; i < 50 && !deck; i++) {
     await new Promise((r) => setTimeout(r, 100))

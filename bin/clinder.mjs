@@ -171,7 +171,7 @@ const opts = parse(process.argv.slice(2))
 const [command, target] = opts._
 try {
   if (opts.version) console.log(version)
-  else if (opts.help || !command) console.log(HELP)
+  else if (opts.help || !command || command === 'help') console.log(HELP)
   else if (command === 'init') init(target)
   else if (command === 'build') build(target, opts.out)
   else if (command === 'serve') await serveAndWait(target, opts)

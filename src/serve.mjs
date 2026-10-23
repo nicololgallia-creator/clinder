@@ -166,7 +166,8 @@ export function serve(input, { port = 4848, open = true, answers, quiet = false 
       else reject(err)
     })
     server.on('listening', () => {
-      const url = `http://localhost:${server.address().port}`
+      // The address it listens on. "localhost" can resolve to IPv6 first, which Node 18's fetch does not fall back from.
+      const url = `http://127.0.0.1:${server.address().port}`
       log(`\n  ${latest.deck.title}: ${latest.deck.cards.length} card${latest.deck.cards.length === 1 ? '' : 's'}`)
       log(`  Review at  ${url}`)
       log(`  Answers go to  ${answersFile}`)

@@ -169,7 +169,7 @@ On a laptop the whole card fits the screen: what changed on the left, the pictur
 
 ## Privacy and safety
 
-- `serve` listens on your own machine only (`127.0.0.1`) and only answers requests addressed to `localhost`.
+- `serve` listens on your own machine only (`127.0.0.1`) and only answers requests addressed to it by `127.0.0.1` or `localhost`.
 - Agents act on the notes in `answers.json`, so only the review page can write to it. Each run makes a secret token that other websites cannot read, which stops them from planting notes.
 - The page makes no requests to the internet. The fonts are built into the page, and there is no analytics or CDN.
 
