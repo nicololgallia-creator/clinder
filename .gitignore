@@ -1,0 +1,5 @@
+node_modules/
+answers.json
+review.html
+*.tmp
+.DS_Store

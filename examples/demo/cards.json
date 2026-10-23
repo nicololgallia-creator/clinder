@@ -1,0 +1,73 @@
+{
+  "$schema": "../../cards.schema.json",
+  "title": "Fieldnote, Thursday's agent run",
+  "kinds": {
+    "built": { "label": "Built", "tone": "green" },
+    "check": { "label": "Please check", "tone": "gold" },
+    "decide": { "label": "Your decision", "tone": "ink" }
+  },
+  "cards": [
+    {
+      "id": "pricing-page",
+      "label": "#1",
+      "kind": "built",
+      "title": "New pricing page with two plans",
+      "by": "Agent 1, Sonnet 5.5, 267k tokens",
+      "summary": [
+        "Fieldnote now has a pricing page. It shows two plans. Starter is free for teams of up to five people. Team costs $12 per person each month and has no limits.",
+        "Under the plans is a short list of four questions people usually ask: changing plans, student pricing, what happens to notes if you cancel, and invoices. On a phone the two plan cards stack on top of each other."
+      ],
+      "look": "The two plan cards in the first picture, and the questions in the second.",
+      "flags": [
+        "The buttons look right but do not go anywhere yet. Checkout was out of scope.",
+        "The student pricing answer is a guess. The brief did not say what the company offers."
+      ],
+      "images": [
+        { "src": "screenshots/pricing-plans.png", "caption": "The two plans" },
+        { "src": "screenshots/pricing-faq.png", "caption": "Questions people ask" }
+      ]
+    },
+    {
+      "id": "weekly-chart",
+      "label": "#2",
+      "kind": "check",
+      "title": "Sign-ups chart in the weekly report",
+      "by": "Agent 2, Opus 5.5, 412k tokens",
+      "summary": [
+        "The weekly report now opens with a chart of sign-ups per day, with the number on top of each bar. Thursday is highlighted because it was the best day.",
+        "The numbers come from the same export as last Monday's report, so the two agree."
+      ],
+      "steps": [
+        "Open the weekly report on a small phone.",
+        "Check that the Sunday bar is not cut off at the right edge."
+      ],
+      "images": [{ "src": "screenshots/weekly-chart.png", "caption": "Sign-ups per day" }]
+    },
+    {
+      "id": "date-helpers",
+      "label": "#3",
+      "kind": "built",
+      "title": "One shared date helper instead of three",
+      "by": "Agent 3, Haiku 5.5, 58k tokens",
+      "summary": [
+        "Three copies of the code that works out when a week starts had drifted apart, which is why two reports disagreed about the same week. They are now one shared helper, with 14 tests. All 14 pass.",
+        "Weeks now start on Monday everywhere. One old copy started on Sunday, so a report that used it may now show different numbers for the same dates."
+      ],
+      "look": "Nothing changes on screen. The notes file lists exactly what moved.",
+      "links": [{ "text": "What changed and why (notes.md)", "href": "files/notes.md" }]
+    },
+    {
+      "id": "dark-mode-default",
+      "label": "#4",
+      "kind": "decide",
+      "title": "Dark mode and email settings",
+      "by": "Agent 4, Sonnet 5.5, 131k tokens",
+      "summary": [
+        "Settings now has two groups. Appearance holds a dark mode switch and a large text switch. Notifications holds the weekly summary email and mentions.",
+        "The switches move but are not saved yet. Saving them needs a decision about where settings live."
+      ],
+      "ask": "Should the weekly summary email start on or off for new people? I chose on.",
+      "demo": { "src": "prototypes/settings.html", "caption": "The new settings page. The switches work, but nothing is saved yet.", "height": 460 }
+    }
+  ]
+}

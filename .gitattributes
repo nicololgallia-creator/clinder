@@ -1,0 +1,4 @@
+# Unix line endings everywhere: the command's first line (#!/usr/bin/env node) breaks on a Mac or Linux with Windows line endings.
+* text=auto eol=lf
+*.png binary
+*.woff2 binary

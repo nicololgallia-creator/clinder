@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/nicololgallia-creator/clinder/main/cards.schema.json",
+  "title": "Clinder deck",
+  "description": "A deck of cards to review in Clinder. Each card is one piece of finished work.",
+  "type": "object",
+  "required": ["cards"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "title": { "type": "string", "description": "The name at the top of the page." },
+    "theme": { "enum": ["auto", "light", "dark"], "default": "auto", "description": "auto follows the reviewer's system setting." },
+    "kinds": {
+      "type": "object",
+      "description": "Coloured labels a card can carry. The key is what a card puts in \"kind\".",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string", "description": "The label text." },
+          {
+            "type": "object",
+            "required": ["label"],
+            "properties": {
+              "label": { "type": "string" },
+              "tone": { "enum": ["green", "gold", "red", "ink", "plain"] }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "description": "Short and unique. Answers are saved under it." },
+          "title": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "description": "A short tag shown before the title, like \"#7\"." },
+          "kind": { "type": "string", "description": "One of the keys in \"kinds\"." },
+          "by": { "type": "string", "description": "Who did the work, like \"Agent 3, Sonnet 5.5, 58k tokens\"." },
+          "summary": {
+            "description": "What changed, in plain words. Paragraphs, or one text where a blank line starts a new paragraph.",
+            "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }]
+          },
+          "look": { "type": "string", "description": "What the reviewer should look at." },
+          "steps": { "type": "array", "items": { "type": "string" }, "description": "Steps the reviewer can follow to check the work." },
+          "ask": { "type": "string", "description": "A question only the reviewer can answer." },
+          "flags": { "type": "array", "items": { "type": "string" }, "description": "Heads-ups: anything unfinished, unchecked or guessed." },
+          "images": {
+            "type": "array",
+            "description": "Pictures of the work, or short .mp4 or .webm recordings, shown in order. Paths are relative to this file.",
+            "items": {
+              "oneOf": [
+                { "type": "string" },
+                {
+                  "type": "object",
+                  "required": ["src"],
+                  "properties": { "src": { "type": "string" }, "caption": { "type": "string" } },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "code": {
+            "description": "Text output for work with nothing to photograph: a test run, terminal output, a short diff. Shown in a scrollable block.",
+            "oneOf": [
+              { "type": "string" },
+              {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    { "type": "string" },
+                    {
+                      "type": "object",
+                      "required": ["text"],
+                      "properties": { "text": { "type": "string" }, "caption": { "type": "string" } },
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "demo": {
+            "description": "A page the reviewer can click through inside the card: an .html file next to this deck, or a web address. It runs sandboxed.",
+            "oneOf": [
+              { "type": "string" },
+              {
+                "type": "object",
+                "required": ["src"],
+                "properties": {
+                  "src": { "type": "string" },
+                  "caption": { "type": "string" },
+                  "height": { "type": "number", "minimum": 240, "maximum": 1200, "description": "Height of the frame in pixels. Default 520." }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "links": {
+            "type": "array",
+            "description": "Files or pages to open. Relative paths are relative to this file.",
+            "items": {
+              "oneOf": [
+                { "type": "string" },
+                {
+                  "type": "object",
+                  "required": ["href"],
+                  "properties": { "href": { "type": "string" }, "text": { "type": "string" } },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

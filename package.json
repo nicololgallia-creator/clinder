@@ -1,0 +1,42 @@
+{
+  "name": "clinder",
+  "version": "0.1.0",
+  "description": "Swipe through work your AI agents finished. Say \"use clinder\" and the review opens when they are done; approve it, or send it back with a note the agent can read.",
+  "keywords": [
+    "ai",
+    "agents",
+    "review",
+    "claude",
+    "claude-code",
+    "skill",
+    "swipe",
+    "approval",
+    "human-in-the-loop"
+  ],
+  "license": "MIT",
+  "author": "Nicolo Gallia",
+  "type": "module",
+  "bin": {
+    "clinder": "bin/clinder.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "cards.schema.json",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node bin/clinder.mjs serve examples/demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicololgallia-creator/clinder.git"
+  },
+  "homepage": "https://github.com/nicololgallia-creator/clinder#readme"
+}
