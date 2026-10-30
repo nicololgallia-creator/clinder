@@ -117,8 +117,8 @@ test('build puts every picture inside the page', () => {
 
 test('the page loads nothing from the internet: the font is built in', () => {
   const { html } = buildPage(demo)
-  assert.match(html, /@font-face \{ font-family: "Jersey 15";[^}]*url\(data:font\/woff2;base64,/)
-  assert.match(html, /@font-face \{ font-family: "Atkinson Hyperlegible"; font-style: normal; font-weight: 700;[^}]*url\(data:font\/woff2;base64,/)
+  assert.match(html, /@font-face \{ font-family: "Newsreader";[^}]*url\(data:font\/woff2;base64,/)
+  assert.match(html, /@font-face \{ font-family: "Geist Mono"; font-style: normal; font-weight: 100 900;[^}]*url\(data:font\/woff2;base64,/)
   assert.ok(!html.includes('/*FONT*/'))
   // the only web address allowed is the plain link in the credit, which loads nothing by itself
   const external = [...html.matchAll(/(?:src|href)\s*=\s*["']?(https?:[^"'\s>]+)/g)].map((m) => m[1])

@@ -127,7 +127,7 @@ Some work is easier to judge by using it than by looking at it. Give a card a `d
 
 The page runs sandboxed: it cannot see the review, the answers or the server, and keys pressed inside it stay inside it, so the arrow keys never answer the card by accident. With `build`, a local page goes inside the review file, so it should be one self-contained `.html` file. With `serve`, it can load files next to it in the deck's folder. A web address works too, if that site allows being shown inside another page.
 
-The top level can also set `"theme": "light"` or `"dark"`. The default follows the reviewer's system.
+Clinder has one look, so older decks that set `"theme"` still load and the setting is ignored.
 
 Add `"$schema": "https://raw.githubusercontent.com/nicololgallia-creator/clinder/main/cards.schema.json"` to get autocomplete and checking in most editors. If something is wrong, Clinder lists every problem at once, with the card it belongs to.
 
@@ -175,9 +175,9 @@ On a laptop the whole card fits the screen: what changed on the left, the pictur
 
 ## Look
 
-Cream paper, brown outlines, and chunky buttons that press down when you tap them: a clay **No, fix it** and a green **Yes, approve**. Titles and buttons are set in Jersey 15, a pixel font, and everything you read is in Atkinson Hyperlegible, a typeface designed to be easy to read. It follows the reviewer's light or dark setting.
+A night sky, thin lines and small corners, with two loud things on it: an ember **No, fix it** and a sun **Yes, approve**, both solid buttons that press down when you tap them. What you read is set in Newsreader, and everything structural is in Geist Mono.
 
-Every answer gets one clear moment: the card floods with its colour, a big APPROVED or SENT BACK stamp lands in the middle, and the card slides away as the next one rises off the stack. Finishing the deck rains pixel confetti. With "reduce motion" turned on, nothing moves: the colour and the stamp still show, so you always see what you answered.
+Every answer gets one clear moment: the card floods with its colour, a big APPROVED or SENT BACK stamp lands in the middle, and the card slides away as the next one rises off the stack. Finishing the deck rains sparks. With "reduce motion" turned on, nothing moves: the colour and the stamp still show, so you always see what you answered.
 
 Colours are tokens at the top of [`src/template.html`](src/template.html), with a light and a dark set. Change them to make Clinder look like your own tools.
 
@@ -193,4 +193,6 @@ The code is small: `src/deck.mjs` reads and checks a deck, `src/build.mjs` makes
 
 Clinder is MIT licensed and made by [Gallia](https://galliainc.com). It is not affiliated with Anthropic or Tinder.
 
-It includes two fonts under the SIL Open Font License: Jersey 15 by The Soft Type Project Authors ([licence](src/fonts/OFL-jersey-15.txt)) and Atkinson Hyperlegible by the Braille Institute of America ([licence](src/fonts/OFL-atkinson-hyperlegible.txt)).
+It includes two fonts under the SIL Open Font License: Newsreader by The Newsreader Project Authors ([licence](src/fonts/OFL-newsreader.txt)) and Geist Mono by The Geist Project Authors ([licence](src/fonts/OFL-geist-mono.txt)).
+
+The Gallia name and rooster logo are not covered by the MIT License. See [NOTICE.md](NOTICE.md).

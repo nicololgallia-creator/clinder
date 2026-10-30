@@ -12,12 +12,11 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
 const TEMPLATE = path.join(HERE, 'template.html')
 
 // The fonts go inside the page, so it looks the same everywhere and never fetches anything from the internet.
-// Jersey 15 for titles and buttons, Atkinson Hyperlegible for reading. Both are under the SIL Open Font
+// Newsreader for what you read, Geist Mono for everything structural. Both are under the SIL Open Font
 // License; the licences are in src/fonts.
 const FONTS = [
-  ['Jersey 15', 400, 'jersey-15.woff2'],
-  ['Atkinson Hyperlegible', 400, 'atkinson-hyperlegible-400.woff2'],
-  ['Atkinson Hyperlegible', 700, 'atkinson-hyperlegible-700.woff2'],
+  ['Newsreader', '200 800', 'newsreader-var.woff2'],
+  ['Geist Mono', '100 900', 'geist-mono-var.woff2'],
 ]
 let fontRules = null
 const fontFace = () =>

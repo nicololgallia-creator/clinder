@@ -8,7 +8,7 @@
   "properties": {
     "$schema": { "type": "string" },
     "title": { "type": "string", "description": "The name at the top of the page." },
-    "theme": { "enum": ["auto", "light", "dark"], "default": "auto", "description": "auto follows the reviewer's system setting." },
+    "theme": { "enum": ["auto", "light", "dark"], "default": "auto", "description": "Kept so older decks still load. Clinder has one look, so this is ignored." },
     "kinds": {
       "type": "object",
       "description": "Coloured labels a card can carry. The key is what a card puts in \"kind\".",
